@@ -306,10 +306,12 @@
 
 <script>
   $(window).on("load", function() {
-    console.log('loaded!');
-    $('#loading_overlay').fadeOut(200);
+    setTimeout(hideOverlay, 5000);
   });
 
+  function hideOverlay() {
+    $('#loading_overlay').hide();
+  }
 
   $('div[data-bs-toggle="tab"]').on('show.bs.tab', function(e) {
   let target = $(e.target).data('bs-target');
