@@ -96,7 +96,6 @@ html, body {
   position: absolute;
   transition: 0.2s ease-in-out;
   cursor: pointer;
-
 }
 
 #nav-home-tab {
@@ -105,7 +104,7 @@ html, body {
   top: 30px;
 }
 
-#nav-home-tab:hover {
+#nav-home-tab:hover, #nav-home-tab.active {
   top: 14px;
 }
 
@@ -114,7 +113,7 @@ html, body {
   left: 630px;
   top: 30px;
 }
-#nav-characters-tab:hover {
+#nav-characters-tab:hover, #nav-characters-tab.active {
   top: 14px;
 }
 
@@ -123,7 +122,7 @@ html, body {
   left: 735px;
   top: 30px;
 }
-#nav-map-tab:hover {
+#nav-map-tab:hover, #nav-map-tab.active {
   top: 14px;
 }
 
@@ -132,7 +131,7 @@ html, body {
   left: 845px;
   top: 30px;
 }
-#nav-skills-tab:hover {
+#nav-skills-tab:hover, #nav-skills-tab.active {
   top: 14px;
 }
 
@@ -141,7 +140,7 @@ html, body {
   left: 955px;
   top: 30px;
 }
-#nav-activities-tab:hover {
+#nav-activities-tab:hover, #nav-activities-tab.active {
   top: 14px;
 }
 
