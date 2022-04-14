@@ -17,7 +17,7 @@
   height: 750px;
   margin: 0 auto;
   margin-top: 120px;
-  background-image: url('book.png');
+  background-image: url('images/book.png');
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 10;
@@ -47,7 +47,7 @@
 }
 
 #nav-home-tab {
-  background-image: url('home_tab.png');
+  background-image: url('images/home_tab.png');
   left: 120px;
   top: 30px;
 }
@@ -57,7 +57,7 @@
 }
 
 #nav-characters-tab {
-  background-image: url('chars_tab.png');
+  background-image: url('images/chars_tab.png');
   left: 630px;
   top: 30px;
 }
@@ -66,7 +66,7 @@
 }
 
 #nav-map-tab {
-  background-image: url('map_tab.png');
+  background-image: url('images/map_tab.png');
   left: 735px;
   top: 30px;
 }
@@ -75,7 +75,7 @@
 }
 
 #nav-skills-tab {
-  background-image: url('skills_tab.png');
+  background-image: url('images/skills_tab.png');
   left: 845px;
   top: 30px;
 }
@@ -84,7 +84,7 @@
 }
 
 #nav-activities-tab {
-  background-image: url('activities_tab.png');
+  background-image: url('images/activities_tab.png');
   left: 955px;
   top: 30px;
 }
@@ -113,6 +113,10 @@
   padding: 20px;
 }
 
+.right-page-link {
+  cursor: pointer;
+}
+
 #home-content {
   padding-top: 150px;
 }
@@ -122,7 +126,7 @@
   width: 400px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('khronicles_title.png');
+  background-image: url('images/khronicles_title.png');
 }
 
 
@@ -145,25 +149,25 @@
 #characters_title {
   height: 60px;
   width: 300px;
-  background-image: url('characters_title.png');
+  background-image: url('images/characters_title.png');
 }
 
 #map_title {
   height: 40px;
   width: 200px;
-  background-image: url('map_title.png');
+  background-image: url('images/map_title.png');
 }
 
 #skills_title {
   height: 40px;
   width: 200px;
-  background-image: url('skills_title.png');
+  background-image: url('images/skills_title.png');
 }
 
 #activities_title {
   height: 50px;
   width: 280px;
-  background-image: url('activities_title.png');
+  background-image: url('images/activities_title.png');
 }
 
 .header {
@@ -173,7 +177,7 @@
   text-align: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('header_bg.png');
+  background-image: url('images/header_bg.png');
   padding-top: 20px;
   font-size: 0.9em;
 }
@@ -181,7 +185,7 @@
 #char_dede {
   height: 330px;
   width: 280px;
-  background-image: url('dede.png');
+  background-image: url('images/dede.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -192,7 +196,7 @@
 #dede_laptop {
   height: 90px;
   width: 90px;
-  background-image: url('dede_laptop.png');
+  background-image: url('images/dede_laptop.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -203,7 +207,7 @@
 #dede_tissue {
   height: 90px;
   width: 90px;
-  background-image: url('dede_tissue.png');
+  background-image: url('images/dede_tissue.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -214,10 +218,340 @@
 #dede_heart {
   height: 90px;
   width: 90px;
-  background-image: url('dede_heart.png');
+  background-image: url('images/dede_heart.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
   right: 0;
   top: 200px;
+}
+
+
+#char_xuanxuan {
+  height: 330px;
+  width: 280px;
+  background-image: url('images/xuanxuan.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+#xx_kindle {
+  height: 90px;
+  width: 90px;
+  background-image: url('images/xx_kindle.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+#xx_switch {
+  height: 90px;
+  width: 90px;
+  background-image: url('images/xx_switch.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 110px;
+}
+
+#xx_note {
+  height: 90px;
+  width: 90px;
+  background-image: url('images/xx_note.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 200px;
+}
+
+#map_island {
+  height: 450px;
+  width: 450px;
+  background-image: url('images/map_island.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -10px;
+  top: 100px;
+}
+
+.map-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+}
+
+#klubhouse_icon {
+  height: 120px;
+  width: 90px;
+  background-image: url('images/klubhouse_icon.png');
+  left: 40px;
+  top: 190px;
+}
+
+#klubhouse_icon:hover {
+  transform: scale(1.2);
+}
+
+#kave_icon {
+  height: 120px;
+  width: 90px;
+  background-image: url('images/kave_icon.png');
+  left: 260px;
+  top: 170px;
+}
+
+#kave_icon:hover {
+  transform: scale(1.2);
+}
+
+#home_icon {
+  height: 140px;
+  width: 110px;
+  background-image: url('images/home_icon.png');
+  left: 170px;
+  top: 250px;
+}
+
+#home_icon:hover {
+  transform: scale(1.2);
+}
+
+#klubhouse_pic {
+  height: 350px;
+  width: 450px;
+  background-image: url('images/klubhouse_pic.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#kave_pic {
+  height: 350px;
+  width: 430px;
+  background-image: url('images/kave_pic.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#home_pic {
+  height: 350px;
+  width: 430px;
+  background-image: url('images/home_pic.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.skill-row div {
+  margin-right: 10px;
+}
+
+.skill-row h5 {
+  font-size: 0.9em;
+}
+
+.skill-row:hover {
+  /* transform: scale(1.1); */
+}
+.skill-row:hover .selected-border, .skill-row.active .selected-border {
+  display: block;
+}
+
+#skill_disco_icon {
+  height: 80px;
+  width: 80px;
+  background-image: url('images/skill_disco.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#skill_disco {
+  height: 150px;
+  width: 150px;
+  background-image: url('images/skill_disco.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.selected-border {
+  width: 410px;
+  height: 80px;
+  background-image: url('images/selected_border.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.description-box {
+  margin-top: 20px;
+  font-size: 0.7em;
+}
+
+
+#skill_jellyfish_icon {
+  height: 80px;
+  width: 80px;
+  background-image: url('images/skill_jellyfish.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#skill_jellyfish {
+  height: 150px;
+  width: 150px;
+  background-image: url('images/skill_jellyfish.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#skill_tailwhip_icon {
+  height: 80px;
+  width: 80px;
+  background-image: url('images/skill_tailwhip.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#skill_tailwhip {
+  height: 150px;
+  width: 150px;
+  background-image: url('images/skill_tailwhip.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#skill_whileloop_icon {
+  height: 80px;
+  width: 80px;
+  background-image: url('images/skill_whileloop.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#skill_whileloop {
+  height: 150px;
+  width: 150px;
+  background-image: url('images/skill_whileloop.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+#dede_head {
+  height: 150px;
+  width: 150px;
+  background-image: url('images/dede_head.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.2s ease-in-out;
+  display: inline-block;
+}
+
+/* #dede_head:hover {
+  transform: scale(1.1);
+} */
+
+#xx_head {
+  height: 150px;
+  width: 150px;
+  background-image: url('images/xx_head.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.2s ease-in-out;
+  display: inline-block;
+}
+
+/* #xx_head:hover {
+  transform: scale(1.1);
+} */
+
+.char-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.char-icon:hover {
+  transform: scale(1.1);
+}
+
+.char-icon:hover .selected-border-small, .char-icon.active .selected-border-small {
+  display: block;
+}
+
+.selected-border-small {
+  width: 135px;
+  height:135px;
+  background-image: url('images/small_border.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 9px;
+  display: none;
+}
+
+#lanparti_icon {
+  height: 80px;
+  width: 80px;
+  background-image: url('images/lanparti_icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#lanparti_pic {
+  height: 300px;
+  width: 430px;
+  background-image: url('images/act_lanparti.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#staykay_icon {
+  height: 80px;
+  width: 80px;
+  background-image: url('images/act_staykay_icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#staykay_pic {
+  height: 300px;
+  width: 430px;
+  background-image: url('images/act_staykay.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#klimbing_icon {
+  height: 80px;
+  width: 80px;
+  background-image: url('images/klimbing_icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#klimbing_pic {
+  height: 300px;
+  width: 430px;
+  background-image: url('images/act_klimbing.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
