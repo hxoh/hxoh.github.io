@@ -303,6 +303,11 @@
 
 
 <script>
+  $(window).on("load", function() {
+    console.log('loaded!');
+  });
+
+
   $('div[data-bs-toggle="tab"]').on('show.bs.tab', function(e) {
     console.log('clicked');
   let target = $(e.target).data('bs-target');
