@@ -3,300 +3,1246 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>THE KOOLKIDKHRONICLES</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <title>PIDGLAND</title>
+    <link rel="stylesheet" href="stylesheet_three.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Patrick+Hand+SC&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
   </head>
   <body id="layout">
     <div id="loading_overlay">Loading</div>
     <div id="background"></div>
-    <div class="container">
-      <div id="book">
-        <div class="book-content">
-          <div id="left-page">
-            <div class="tab-content">
-              <div class="tab-pane show active nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div id="topbar">
+      🐦 PIDGLAND 🐦
+    </div>
+    <div id="map-container">
+      <div class="map" id="world-map">
+        <!-- <div class="visit-link" id="sg" data-name="Singapore">hi</div> -->
+        <div class="map-icon" id="sg"></div>
+        <div class="map-path sg-path" id="sg-path-one"></div>
+        <div class="map-path sg-path" id="sg-path-two"></div>
 
+
+        <div class="map-icon" id="penang"></div>
+        <div class="map-path penang-path" id="penang-path-one"></div>
+        <div class="map-path penang-path" id="penang-path-two"></div>
+
+        <div class="map-icon" id="kl"></div>
+        <div class="map-path kl-path" id="kl-path"></div>
+
+        <div class="map-icon" id="bk"></div>
+        <div class="map-icon" id="hcm"></div>
+        <div class="map-path hcm-path" id="hcm-path"></div>
+
+        <div class="map-icon" id="japan"></div>
+      </div>
+      <div class="map" id="sg-map">
+        <div class="visit-link" data-map="world" data-name="Welcome to Pidgland!"><i class="bi bi-arrow-left"></i> back to outside outside world</div>
+        <!-- <div class="visit-link" id="koolkidhome"><i class="bi bi-arrow-right"></i> koolkidhome</div> -->
+        <div class="map-icon" id="gbtb"></div>
+        <div class="map-icon" id="koolkidhome"></div>
+        <div class="map-icon" id="koolkidkave"></div>
+        <div class="map-icon" id="koolkidklubhouse"></div>
+      </div>
+      <div class="map" id="home-map">
+        <div class="visit-link" data-map="sg" data-name="Singapore"><i class="bi bi-arrow-left"></i> back to outside world</div>
+        <div class="map-icon" id="kafebar"></div>
+        <div class="map-icon" id="pumpingstation"></div>
+        <div class="map-icon" id="lanshop"></div>
+      </div>
+    </div>
+    <div id="sidebar-container">
+      <div id="sidebar">
+        <div class="location-content" id="default-content">
+          <h5 id="location-name">Welcome to Pidgland!</h5>
+          select a location on the map to begin.
+        </div>
+
+
+        <div class="location-content" id="sg-content" style="display: none">
+          <div class="sidebar-image" id="sg-image"></div>
+          <div id="sidebar-content">
+            <h2>Singapore</h2>
+            <div class="star-rating">
+              <span>5</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span>(2)</span>
+            </div>
+            <div class="long-button visit-link mt-2" data-map="sg" data-name="Singapore">Visit</div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="sg-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="sg-about-tab" data-bs-toggle="pill" data-bs-target="#sg-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="sg-reviews-tab" data-bs-toggle="pill" data-bs-target="#sg-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="sg-photos-tab" data-bs-toggle="pill" data-bs-target="#sg-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="sg-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>home to the pidgs.</p>
               </div>
-              <div class="tab-pane nav-characters" role="tabpanel" aria-labelledby="nav-characters-tab">
-                <div class="left-page-title" id="characters_title"></div>
-                <div class="char-icon right-page-link" data-url="characters-dd">
-                  <div class="selected-border-small"></div>
-                  <div id="dede_head"></div>
-                </div>
-                <div class="char-icon right-page-link" data-url="characters-xx">
-                  <div class="selected-border-small"></div>
-                  <div id="xx_head"></div>
-                </div>
+              <div class="tab-pane fade" id="sg-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    v safe butt v boring butt safe
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        15/03/2024 14:32
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    the government is so wonderful.
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 1</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        14/02/2024 20:18
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-2 of 2</div>
               </div>
-              <div class="tab-pane nav-map" role="tabpanel" aria-labelledby="nav-map-tab">
-                <div class="left-page-title" id="map_title"></div>
-                <div id="map_island"></div>
-                <div class="map-icon right-page-link" id="klubhouse_icon" data-url="map-klubhouse"></div>
-                <div class="map-icon right-page-link" id="kave_icon" data-url="map-kave"></div>
-                <div class="map-icon right-page-link" id="home_icon" data-url="map-home"></div>
-              </div>
-              <div class="tab-pane nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
-                <div class="left-page-title" id="skills_title" style="margin-bottom: 15px"></div>
-                <div class="skill-row right-page-link" data-url="skills-chikucha">
-                  <div class="selected-border"></div>
-                  <div id="skill_disco_icon"></div><h5>Chikucha</h5>
-                </div>
-                <div class="skill-row right-page-link" data-url="skills-jellyfish">
-                  <div class="selected-border"></div>
-                  <div id="skill_jellyfish_icon"></div><h5>Jellyfish</h5>
-                </div>
-                <div class="skill-row right-page-link" data-url="skills-tailwhip">
-                  <div class="selected-border"></div>
-                  <div id="skill_tailwhip_icon"></div><h5>Tail Whip</h5>
-                </div>
-                <div class="skill-row right-page-link" data-url="skills-whileloop">
-                  <div class="selected-border"></div>
-                  <div id="skill_whileloop_icon"></div><h5>While Loop</h5>
-                </div>
-              </div>
-              <div class="tab-pane nav-activities" role="tabpanel" aria-labelledby="nav-activities-tab">
-                <div class="left-page-title" id="activities_title" style="margin-bottom: 10px"></div>
-                <div class="skill-row right-page-link" data-url="activities-lanparti">
-                  <div class="selected-border"></div>
-                  <div id="lanparti_icon"></div><h5>Lan Parti</h5>
-                </div>
-                <div class="skill-row right-page-link" data-url="activities-staykay">
-                  <div class="selected-border"></div>
-                  <div id="staykay_icon"></div><h5>KoolkidStaykay</h5>
-                </div>
-                <div class="skill-row right-page-link" data-url="activities-klimbing">
-                  <div class="selected-border"></div>
-                  <div id="klimbing_icon"></div><h5>Koolkidklimbing</h5>
-                </div>
+              <div class="tab-pane fade" id="sg-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
               </div>
             </div>
+
           </div>
-
-          <div id="right-page">
-            <div class="tab-content">
-              <div class="tab-pane show active nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <div id="home-content">
-                  <div id="khronicles_title"></div>
-                  <!-- <h2>The</h2>
-                  <h1>KoolKidKhronicles</h1> -->
-                  <hr>
-                  <h3>FIRST ANNIVERSARY EDITION</h3>
-                  <br><br><br><br><br><br><br>
-                  <h4>WRITTEN BY DEDE & XUANXUAN</h4>
-                  <br>
-                  <h4>PUBLISHED BY MAC CHAN</h4>
-                </div>
+        </div>
+        <div class="location-content" id="penang-content" style="display: none">
+          <div class="sidebar-image" id="penang-image"></div>
+          <div id="sidebar-content">
+            <h2>Penang</h2>
+            <div class="star-rating">
+              <span>4.6</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <span>(3)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="penang-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="penang-about-tab" data-bs-toggle="pill" data-bs-target="#penang-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="penang-reviews-tab" data-bs-toggle="pill" data-bs-target="#penang-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="penang-photos-tab" data-bs-toggle="pill" data-bs-target="#penang-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="penang-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>pidg1's second home.</p>
               </div>
-              <div class="tab-pane nav-characters" role="tabpanel" aria-labelledby="nav-characters-tab">
-
-                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Select a character from the page on the left to learn more.</div>
+              <div class="tab-pane fade" id="penang-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    maybe too much popkorng
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        31/05/2023 15:43
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    i love popkorng parti!!!!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        31/05/2023 13:22
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    my fav hotel.!!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 1</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        29/03/2023 16:38
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-3 of 3</div>
               </div>
-              <div class="tab-pane nav-characters-dd" role="tabpanel" aria-labelledby="nav-characters-dd-tab">
-                <div class="header">DEDE</div>
-                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">The finest human specimen to ever grace this universe. A tough boi with a soft heart full of TLC.</div>
-                <div style="position: relative; height: 330px">
-                  <div id="char_dede"></div>
-                  <div id="dede_laptop"></div>
-                  <div id="dede_tissue"></div>
-                  <div id="dede_heart"></div>
-                </div>
-                <div style="font-size: 0.7em; margin-left: 30px">"I THINK IT'S NICE":</div>
-                <div style="font-size: 0.6em; margin-left: 30px">
-                  -PRESIDENT BUTTER<br>
-                  -STRAWBERRY/PANDAN/MELON FLAVOUR<br>
-                  -LEAF PIZZA
-                </div>
-
-                <div style="font-size: 0.7em; margin-top: 15px; margin-left: 30px">"ABOMINATION":</div>
-                <div style="font-size: 0.6em; margin-left: 30px">
-                  -YUZU DRINK<br>
-                  -TAISENG NOMVNOM<br>
-                  -2X SPICY
-                </div>
-              </div>
-              <div class="tab-pane nav-characters-xx" role="tabpanel" aria-labelledby="nav-characters-xx-tab">
-                <div class="header">XUANXUAN</div>
-                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Dede's Number One Fan. Keeps herself entertained with good books/funny birds/dede photos.</div>
-                <div style="position: relative; height: 330px">
-                  <div id="char_xuanxuan"></div>
-                  <div id="xx_kindle"></div>
-                  <div id="xx_switch"></div>
-                  <div id="xx_note"></div>
-                </div>
-                <div style="font-size: 0.7em; margin-left: 30px">LOVES:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">
-                  -DEDE<br>
-                  -Her private collection of sleeping dedes<br>
-                  -BIRDS
-                </div>
-
-                <div style="font-size: 0.7em; margin-top: 15px; margin-left: 30px">NOT SO LOVE:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">
-                  -SPOILERS<br>
-                </div>
-              </div>
-              <div class="tab-pane nav-map" role="tabpanel" aria-labelledby="nav-map-tab">
-                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Select a location from the map on the left to learn more.</div>
-              </div>
-              <div class="tab-pane nav-map-klubhouse" role="tabpanel" aria-labelledby="nav-map-klubhouse-tab">
-                <div class="header">Koolkidklubhouse</div>
-                <div id="klubhouse_pic"></div>
-                <div style="font-size: 0.7em; margin-left: 30px">Home to:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">
-                  -Dede<br>
-                  -Xuanxuan (commonly spotted)<br>
-                  -Yummy mama lim food<br>
-                  -lots of da zi ran<br>
-                  -Tom & jerry<br>
-                  -rejected kaleng
-                </div>
-              </div>
-              <div class="tab-pane nav-map-kave" role="tabpanel" aria-labelledby="nav-map-kave-tab">
-                <div class="header">Koolkidkave</div>
-                <div id="kave_pic"></div>
-                <div style="font-size: 0.7em; margin-left: 30px">Home to:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">
-                  -Xuanxuan<br>
-                  -Dede (Uncommon visitor)<br>
-                  -Mama oh cooking<br>
-                  -Birdie & Fishie & Orchid chan<br>
-                  -Nex
-                </div>
-              </div>
-              <div class="tab-pane nav-map-home" role="tabpanel" aria-labelledby="nav-map-home-tab">
-                <div class="header">Koolkidhome</div>
-                <div id="home_pic"></div>
-                <div style="font-size: 0.7em; margin-left: 30px">!! Coming soon in Patch v5.3 !!</div>
-                <br>
-
-                <div style="font-size: 0.7em; margin-left: 30px">New features:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">
-                  -Gorgeous daytime sea view<br>
-                  -Breathtaking nighttime city view<br>
-                  -Garden w/ unlimited basil<br>
-                  -▓▓▓ ▓▓▓▓▓▓ A Nice Bedroom
-                </div>
-              </div>
-              <div class="tab-pane nav-skills" role="tabpanel">
-                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Select a skill from the list on the left to learn more.</div>
-              </div>
-              <div class="tab-pane nav-skills-chikucha" role="tabpanel">
-                <div class="header">Chikucha</div>
-                <div class="d-flex">
-                  <div id="skill_disco"></div>
-                  <div class="description-box">
-                    type: dance<br>
-                    cooldown: 0s<br>
-                    cost: 1 ~ 100 energy<br>
-                    power: weekly lift breakdowns<br>
-                  </div>
-                </div>
-                <div style="font-size: 0.7em; margin-left: 30px">Upgrades</div><br>
-
-                <div style="font-size: 0.7em; margin-left: 30px">Silent Chikucha:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">skips lift maintenance for one week.</div><br>
-                <div style="font-size: 0.7em; margin-left: 30px">Vigorous Chikucha:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">guarantees this week's lift maintenance + stuns chikucha partner for entire duration.<br>
-                </div>
-              </div>
-              <div class="tab-pane nav-skills-jellyfish" role="tabpanel">
-                <div class="header">Jellyfish</div>
-                <div class="d-flex">
-                  <div id="skill_jellyfish"></div>
-                  <div class="description-box">
-                    type: dance<br>
-                    cooldown: 0s<br>
-                    cost: 1~100 energy<br>
-                    power: motivation up!<br>
-                  </div>
-                </div>
-                <div style="font-size: 0.7em; margin-left: 30px; margin-top: 5px">Upgrades</div><br>
-
-                <div style="font-size: 0.7em; margin-left: 30px">Morning Jellyfish:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">A goo-reat way to start the day.</div><br>
-                <div style="font-size: 0.7em; margin-left: 30px">Happy Jellyfish:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">Having a splatastic slime!<br>
-                </div>
-              </div>
-              <div class="tab-pane nav-skills-tailwhip" role="tabpanel">
-                <div class="header">Tail Whip</div>
-                <div class="d-flex">
-                  <div id="skill_tailwhip"></div>
-                  <div class="description-box">
-                    type: move<br>
-                    cooldown: 0s<br>
-                    cost: 10 ~ 100 energy<br>
-                    power: charms foe<br>
-                  </div>
-                </div>
-                <div style="font-size: 0.7em; margin-left: 30px; margin-top: 5px">Upgrades</div><br>
-                <div style="font-size: 0.7em; margin-left: 30px">Travelling Tail whip:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">Captivates target, leaving them stunned for the entire duration and more. Only usable by dede.<br>
-                </div>
-              </div>
-              <div class="tab-pane nav-skills-whileloop" role="tabpanel">
-                <div class="header">While Loop</div>
-                <div class="d-flex">
-                  <div id="skill_whileloop"></div>
-                  <div class="description-box">
-                    type: move<br>
-                    cooldown: 0s<br>
-                    cost: 0 energy<br>
-                    power: ???<br>
-                  </div>
-                </div>
-                <!-- <div style="font-size: 0.7em; margin-left: 30px; margin-top: 5px">Upgrades</div><br> -->
-                <br><br>
-                <div style="font-size: 0.7em; margin-left: 30px">Effects unknown. Testing is still ongoing...</div>
-                <br>
-                <div style="font-size: 0.7em; margin-left: 30px">Test inputs:</div>
-                <div style="font-size: 0.6em; margin-left: 30px">
-                  'Dat tuu' 'dat not tuu'<br><br>
-
-                  '(insert name) so bootipul'<br>
-                  '(insert other name) more bootipul'<br>
-                  '(insert first name) most bootipul'<br>
-                  '(insert other name) more bootipul than (insert first name)'<br>
-                  ...'dat not tuu' 'dat tuu'<br>
-                </div>
-              </div>
-              <div class="tab-pane nav-activities" role="tabpanel">
-                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Select an activity from the list on the left to learn more.</div>
-              </div>
-
-              <div class="tab-pane nav-activities-lanparti" role="tabpanel">
-                <div class="header">Lan Parti</div>
-                <div id="lanparti_pic"></div>
-                <div style="font-size: 0.6em; margin-left: 30px">A favourite pastime that has sucked up countless weekends and occasional weekdays and will probably continue to do so for the rest of our 999-year auto renewal contract.</div>
-              </div>
-
-              <div class="tab-pane nav-activities-staykay" role="tabpanel">
-                <div class="header">Koolkidstaykay</div>
-                <div id="staykay_pic" style="margin-top: 10px"></div>
-                <div style="font-size: 0.6em; margin-left: 30px">aka bathtub appreciation and workathon adventures under zero adult supervision. ;)</div>
-              </div>
-
-              <div class="tab-pane nav-activities-klimbing" role="tabpanel">
-                <div class="header">Koolkidklimbing</div>
-                <div id="klimbing_pic" style="margin-top: 10px"></div>
-                <div style="font-size: 0.6em; margin-left: 30px"><s style="text-decoration-thickness: 1.5px;">Dede butt & muscle appreciation session</s> a fun and challenging workout, except when the wall beats you and demands you confront it again by booking another 1am session on the same day.</div>
+              <div class="tab-pane fade" id="penang-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
               </div>
             </div>
+
+          </div>
+        </div>
+        <div class="location-content" id="kl-content" style="display: none">
+          <div class="sidebar-image" id="kl-image"></div>
+          <div id="sidebar-content">
+            <h2>Kuala Lumpur</h2>
+            <div class="star-rating">
+              <span>3.6</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <i class="bi bi-star"></i>
+              <span>(3)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="kl-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="kl-about-tab" data-bs-toggle="pill" data-bs-target="#kl-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="kl-reviews-tab" data-bs-toggle="pill" data-bs-target="#kl-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="kl-photos-tab" data-bs-toggle="pill" data-bs-target="#kl-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="kl-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>pidg vakay #4!</p>
+              </div>
+              <div class="tab-pane fade" id="kl-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    bird park was a lil depressing although the birdies were cute
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        27/10/2024 14:23
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    <s>baby pool</s> bathtub was fun! and kooking parti too (dede is master chef, xuanxuan is sous chef)
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        26/10/2024 21:33
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    they trying to be orchard road
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 1</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        26/10/2024 12:11
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-3 of 3</div>
+              </div>
+              <div class="tab-pane fade" id="kl-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="location-content" id="hcm-content" style="display: none">
+          <div class="sidebar-image" id="hcm-image"></div>
+          <div id="sidebar-content">
+            <h2>Ho Chi Minh</h2>
+            <div class="star-rating">
+              <span>3</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <span>(4)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="hcm-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="hcm-about-tab" data-bs-toggle="pill" data-bs-target="#hcm-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="hcm-reviews-tab" data-bs-toggle="pill" data-bs-target="#hcm-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="hcm-photos-tab" data-bs-toggle="pill" data-bs-target="#hcm-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="hcm-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>pidgs' first workwork trip location. pidgs might be on the blacklist and will most likely never visit this land again.</p>
+              </div>
+              <div class="tab-pane fade" id="hcm-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    screw communist !!!!!!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- anonymous</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        12/03/2024 16:34
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    SO MANY MOTORBIKE
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        10/09/2022 20:11
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi"></i>
+                    </div>
+                    -1 star for the leaves
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        09/09/2022 21:11
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi"></i>
+                    </div>
+                    love the leaves 😍😍 and the pizza 😍😍😍
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        09/09/2022 20:59
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-4 of 4</div>
+              </div>
+              <div class="tab-pane fade" id="hcm-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="location-content" id="bk-content" style="display: none">
+          <div class="sidebar-image" id="bk-image"></div>
+          <div id="sidebar-content">
+            <h2>Bangkok</h2>
+            <div class="star-rating">
+              <span>3.5</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <i class="bi bi-star"></i>
+              <span>(2)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="bk-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="bk-about-tab" data-bs-toggle="pill" data-bs-target="#bk-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="bk-reviews-tab" data-bs-toggle="pill" data-bs-target="#bk-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="bk-photos-tab" data-bs-toggle="pill" data-bs-target="#bk-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="bk-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>land of audits and yummy food.</p>
+              </div>
+              <div class="tab-pane fade" id="bk-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    i kronch the rice, i love the spice
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        23/03/2024 20:04
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    no more surprise chili parti pls
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 1</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        23/03/2024 19:43
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-2 of 2</div>
+              </div>
+              <div class="tab-pane fade" id="bk-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="location-content" id="japan-content" style="display: none">
+          <div class="sidebar-image" id="japan-image"></div>
+          <div id="sidebar-content">
+            <h2>Japan</h2>
+            <div class="star-rating">
+              <span>5</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span>(2)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="japan-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="japan-about-tab" data-bs-toggle="pill" data-bs-target="#japan-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="japan-reviews-tab" data-bs-toggle="pill" data-bs-target="#japan-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="japan-photos-tab" data-bs-toggle="pill" data-bs-target="#japan-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="japan-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>pidgs' dream land !!!!!</p>
+              </div>
+              <div class="tab-pane fade" id="japan-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    can't w8!!!!!!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        04/04/2024 12:31
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    can't w8!!!!!!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 1</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        04/04/2024 12:31
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-2 of 2</div>
+              </div>
+              <div class="tab-pane fade" id="japan-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="location-content" id="gbtb-content" style="display: none">
+          <div class="sidebar-image" id="gbtb-image"></div>
+          <div id="sidebar-content">
+            <h2>Gardens by the Bay</h2>
+            <div class="star-rating">
+              <span>4.67</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <span>(3)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="gbtb-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="gbtb-about-tab" data-bs-toggle="pill" data-bs-target="#gbtb-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="gbtb-reviews-tab" data-bs-toggle="pill" data-bs-target="#gbtb-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="gbtb-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                a garden with cool plants and a sea view.
+                <hr>
+                <h5>History</h5>
+                <p>an elusive hummingbird was once spotted in the indian garden. it was seen making its way to an unsuspecting visitor, exhausted and in distress. it has been said that the visitor took approximately the whole day to understand what the hummingbird has been trying to communicate to her, which was the location of where her birdie friends have been entrapped by the false brave.</p>
+                <p>as the visitor unlocked the enigmatic chamber with the special key, she realised to her surprise that the birdie friends were alive, unharmed, and engaged in a heated staredown with the water well.<br>it appears that the false brave merely wanted to pet them.</p>
+                <br>
+                <p>also where the war pigeons got engaged !!!!!! 🐦❤️🐦</p>
+              </div>
+              <div class="tab-pane fade" id="gbtb-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    most memorable day of my life.!!!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        22/10/2023 11:11
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    where avatar exhibition in indian garden???? 😡
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- anonymous</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        22/10/2023 11:00
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    kept camping in toilets to prepare my surprise. gf did not suspect a thing. hehe
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 1</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        22/10/2023 10:05
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-3 of 3</div>
+              </div>
+              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="location-content" id="koolkidhome-content" style="display: none">
+          <div class="sidebar-image" id="koolkidhome-image"></div>
+          <div id="sidebar-content">
+            <h2>Koolkidhome</h2>
+            <div class="star-rating">
+              <span>3.5</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <i class="bi bi-star"></i>
+              <span>(2)</span>
+            </div>
+            <div class="long-button visit-link mt-2" data-map="home" data-name="Koolkidhome">Visit</div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="koolkidhome-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="koolkidhome-about-tab" data-bs-toggle="pill" data-bs-target="#koolkidhome-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="koolkidhome-reviews-tab" data-bs-toggle="pill" data-bs-target="#koolkidhome-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="koolkidhome-photos-tab" data-bs-toggle="pill" data-bs-target="#koolkidhome-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="koolkidhome-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>pidgs' future home. under construction!! coming soon in Q3 2027.</p>
+              </div>
+              <div class="tab-pane fade" id="koolkidhome-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    lovely location can't w8 to live with pidg 1!!! and klimb everyday!!!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        22/03/2022 14:32
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    give us back our 4m²
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- john lewood</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        04/04/2024 04:44
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-2 of 2</div>
+              </div>
+              <div class="tab-pane fade" id="koolkidhome-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="location-content" id="koolkidkave-content" style="display: none">
+          <div class="sidebar-image" id="koolkidkave-image"></div>
+          <div id="sidebar-content">
+            <h2>Koolkidkave</h2>
+            <div class="star-rating">
+              <span>2.3</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <span>(3)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="koolkidkave-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="koolkidkave-about-tab" data-bs-toggle="pill" data-bs-target="#koolkidkave-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="koolkidkave-reviews-tab" data-bs-toggle="pill" data-bs-target="#koolkidkave-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="koolkidkave-photos-tab" data-bs-toggle="pill" data-bs-target="#koolkidkave-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="koolkidkave-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>home to pidg2 - you can almost always find her here. (if absent, check koolkidklubhouse)</p>
+                <hr>
+                <h5>Amenities</h5>
+                <ul>
+                  <li>nex</li>
+                  <li>human oven</li>
+                  <li>wu wei kap</li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="koolkidkave-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    thx for the free water and electricity 😘
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- anonymous lan parti-goer</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        30/03/2024 20:47
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    help i cant move
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- anonymous relative</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        11/02/2024 20:08
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    no aircon ded
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        20/06/2015 12:38
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-3 of 3</div>
+              </div>
+              <div class="tab-pane fade" id="koolkidkave-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="location-content" id="koolkidklubhouse-content" style="display: none">
+          <div class="sidebar-image" id="koolkidklubhouse-image"></div>
+          <div id="sidebar-content">
+            <h2>Koolkidklubhouse</h2>
+            <div class="star-rating">
+              <span>5</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span>(2)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="koolkidklubhouse-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="koolkidklubhouse-about-tab" data-bs-toggle="pill" data-bs-target="#koolkidklubhouse-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="koolkidklubhouse-reviews-tab" data-bs-toggle="pill" data-bs-target="#koolkidklubhouse-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="koolkidklubhouse-photos-tab" data-bs-toggle="pill" data-bs-target="#koolkidklubhouse-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="koolkidklubhouse-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>home to pidg1 & mama papa lim. </p>
+                <hr>
+                <h5>Amenities</h5>
+                <ul>
+                  <li>da zi ran</li>
+                  <li>tom & jerry</li>
+                  <li>rare insects</li>
+                  <li>airkon</li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="koolkidklubhouse-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    airkon is lovely butt not as lovely as dede!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        25/03/2024 12:38
+                      </div>
+                    </div>
+                  </li>
+                    <li class="list-group-item">
+                      <div class="star-rating small-text">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+                      dede says good night to everybody we love dede !!!
+                      <div class="row small-text muted-text mt-3">
+                        <div class="col-6">
+                          <div>- benny the bear, timmy the tiger, leon the lion, eric the elephant, caffeine the cat, gerald the giraffe, benedict the beaver & puma the panther</div>
+                        </div>
+                        <div class="col-6 text-end">
+                          23/06/2023 22:47
+                        </div>
+                      </div>
+                    </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-2 of 2</div>
+              </div>
+              <div class="tab-pane fade" id="koolkidklubhouse-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
           </div>
         </div>
 
 
-        <div class="nav" id="nav-tab">
-          <div class="tab active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target=".nav-home" type="button" role="tab"></div>
-          <div class="tab" id="nav-characters-tab" data-bs-toggle="tab" data-bs-target=".nav-characters" type="button" role="tab"></div>
-          <div class="tab" id="nav-map-tab" data-bs-toggle="tab" data-bs-target=".nav-map" type="button" role="tab"></div>
-          <div class="tab" id="nav-skills-tab" data-bs-toggle="tab" data-bs-target=".nav-skills" type="button" role="tab"></div>
-          <div class="tab" id="nav-activities-tab" data-bs-toggle="tab" data-bs-target=".nav-activities" type="button" role="tab"></div>
+        <div class="location-content" id="kafebar-content" style="display: none">
+          <div class="sidebar-image" id="kafebar-image"></div>
+          <div id="sidebar-content">
+            <h2>Koolkidkafe</h2>
+            <div class="star-rating">
+              <span>3</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <span>(2)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="kafebar-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="kafebar-about-tab" data-bs-toggle="pill" data-bs-target="#kafebar-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="kafebar-reviews-tab" data-bs-toggle="pill" data-bs-target="#kafebar-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="kafebar-photos-tab" data-bs-toggle="pill" data-bs-target="#kafebar-photos" type="button" role="tab">Menu</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="kafebar-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>cafe by day, bar by night. expect fine pigeon culinary.</p>
+              </div>
+              <div class="tab-pane fade" id="kafebar-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    made the mistake of ordering four seasons
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- anonymous</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        12/01/2024 19:47
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    crispiest prata & boing-est maggi i've ever eaten !!!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        19/11/2023 20:10
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-2 of 2</div>
+              </div>
+              <div class="tab-pane fade" id="kafebar-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                <p class="mb-0">🧇 <b>Bites</b></p>
+                <ul>
+                  <li>onion rings</li>
+                  <li>fish fingers</li>
+                  <li>calamari</li>
+                  <li>dumpling</li>
+                  <li>baked pastries</li>
+                  <li>waffles</li>
+                  <li>meatballs</li>
+                  <li>frozen fruits</li>
+                  <li>hummus/pesto</li>
+                  <li>garlic bread</li>
+                  <li>chocolate pudding</li>
+                </ul>
+
+                <p class="mt-3 mb-0">🍜 <b>Mains</b></p>
+                <ul>
+                  <li>aglio olio</li>
+                  <li>mushroom cream pasta</li>
+                  <li>tempura</li>
+                  <li>maggi parti</li>
+                  <li>four seasons</li>
+                  <li>burgers</li>
+                  <li>fish & chips</li>
+                  <li>pesto pasta</li>
+                  <li>rice balls</li>
+                  <li>カレーライス</li>
+                  <li>glass noodle</li>
+                  <li>The Mush</li>
+                  <li>salmon don</li>
+                </ul>
+
+                <p class="mt-3 mb-0">☕️ <b>Drinks</b></p>
+                <ul>
+                  <li>thai green tea</li>
+                  <li>kopi machine</li>
+                  <li>assorted teas</li>
+                  <li>four seasons</li>
+                  <li>coconut milkshake</li>
+                  <li>yuzu drink</li>
+                </ul>
+
+                <p class="mt-3 mb-0">🍹 <b>Adult Beverages</b></p>
+                <ul>
+                  <li>soju</li>
+                  <li>midori</li>
+                  <li>mojito</li>
+                  <li>hoegaarden</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="location-content" id="pumpingstation-content" style="display: none">
+          <div class="sidebar-image" id="pumpingstation-image"></div>
+          <div id="sidebar-content">
+            <h2>Pumping Station</h2>
+            <div class="star-rating">
+              <span>5</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span>(2)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="pumpingstation-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pumpingstation-about-tab" data-bs-toggle="pill" data-bs-target="#pumpingstation-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pumpingstation-reviews-tab" data-bs-toggle="pill" data-bs-target="#pumpingstation-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pumpingstation-photos-tab" data-bs-toggle="pill" data-bs-target="#pumpingstation-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pumpingstation-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>pumping station to keep pidgs in shape.</p>
+                <hr>
+                <h5>Equipment</h5>
+                <ul>
+                  <li>powerblocks chan</li>
+                  <li>dips kun</li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="pumpingstation-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    would be nice with pull up bar!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        05/03/2024 15:12
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    i love exercise!!!
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 1</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        01/01/2024 12:12
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-2 of 2</div>
+              </div>
+              <div class="tab-pane fade" id="pumpingstation-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="location-content" id="lanshop-content" style="display: none">
+          <div class="sidebar-image" id="lanshop-image"></div>
+          <div id="sidebar-content">
+            <h2>LAN Korner</h2>
+            <div class="star-rating">
+              <span>3</span>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+              <i class="bi bi-star"></i>
+              <span>(1)</span>
+            </div>
+            <ul class="nav nav-pills nav-fill sidebar-nav my-3" id="lanshop-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="lanshop-about-tab" data-bs-toggle="pill" data-bs-target="#lanshop-about" type="button" role="tab">About</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="lanshop-reviews-tab" data-bs-toggle="pill" data-bs-target="#lanshop-reviews" type="button" role="tab">Reviews</button>
+              </li>
+              <!-- <li class="nav-item" role="presentation">
+                <button class="nav-link" id="lanshop-photos-tab" data-bs-toggle="pill" data-bs-target="#lanshop-photos" type="button" role="tab">Photos</button>
+              </li> -->
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="lanshop-about" role="tabpanel" tabindex="0">
+                <h5>General Information</h5>
+                <p>workwork hard & lan parti hard !!!</p>
+                <hr>
+                <h5>Equipment</h5>
+                <ul>
+                  <li>asus kun</li>
+                  <li>asus chan</li>
+                  <li>mac chan</li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="lanshop-reviews" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="star-rating small-text">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                    mac chan cant stop shaking 🥴
+                    <div class="row small-text muted-text mt-3">
+                      <div class="col-6">
+                        <div>- pidg 2</div>
+                      </div>
+                      <div class="col-6 text-end">
+                        13/04/2024 16:23
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-end small-text muted-text my-3">1-1 of 1</div>
+              </div>
+              <div class="tab-pane fade" id="lanshop-photos" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                No photos found.
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
@@ -313,35 +1259,24 @@
     $('#loading_overlay').fadeOut(200);
   }
 
-  $('div[data-bs-toggle="tab"]').on('show.bs.tab', function(e) {
-  let target = $(e.target).data('bs-target');
-  $(target)
-  .siblings('.tab-pane.active')
-  .removeClass('active show')
-  .hide();
-  $(target)
-    .fadeIn(200)
-    .addClass('active show');
-    $('.skill-row, .char-icon').removeClass('active');
+  $('.map-icon').on('click', function (){
+    id = $(this).attr('id');
+    $('.location-content').hide();
+    $('#' + id + '-content').fadeIn(200);
+    $('.map-icon').removeClass('active');
+    $(this).addClass('active');
   });
 
-  $('.right-page-link').on('click', function() {
-    page = $(this).attr('data-url');
-    $('.nav-' + page)
-    .siblings('.tab-pane.active')
-    .removeClass('active show')
-    .hide();
-    $('.nav-' + page)
-      .fadeIn(200)
-      .addClass('active show');
-    if ($(this).hasClass('skill-row')) {
-      $('.skill-row').removeClass('active');
-      $(this).addClass('active');
-    }
-    else if ($(this).hasClass('char-icon')) {
-      $('.char-icon').removeClass('active');
-      $(this).addClass('active');
-    }
-  });
+  $('.visit-link').on('click', function() {
+    map = $(this).attr('data-map');
+    name = $(this).attr('data-name');
+
+    $('.map').hide();
+    $('.map-icon').removeClass('active');
+    $('#' + map + '-map').fadeIn(200);
+    $('.location-content').hide();
+    $('#default-content').fadeIn(200);
+    $('#location-name').html(name);
+  })
 
 </script>

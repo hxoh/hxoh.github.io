@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>THE KOOLKIDKHRONICLES</title>
+    <link rel="stylesheet" href="stylesheet_one.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Patrick+Hand+SC&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body id="layout">
+    <div id="loading_overlay">Loading</div>
+    <div id="background"></div>
+    <div class="container">
+      <div id="book">
+        <div class="book-content">
+          <div id="left-page">
+            <div class="tab-content">
+              <div class="tab-pane show active nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+              </div>
+              <div class="tab-pane nav-characters" role="tabpanel" aria-labelledby="nav-characters-tab">
+                <div class="left-page-title" id="characters_title"></div>
+                <div class="char-icon right-page-link" data-url="characters-dd">
+                  <div class="selected-border-small"></div>
+                  <div id="dede_head"></div>
+                </div>
+                <div class="char-icon right-page-link" data-url="characters-xx">
+                  <div class="selected-border-small"></div>
+                  <div id="xx_head"></div>
+                </div>
+              </div>
+              <div class="tab-pane nav-map" role="tabpanel" aria-labelledby="nav-map-tab">
+                <div class="left-page-title" id="map_title"></div>
+                <div id="map_island"></div>
+                <div class="map-icon right-page-link" id="klubhouse_icon" data-url="map-klubhouse"></div>
+                <div class="map-icon right-page-link" id="kave_icon" data-url="map-kave"></div>
+                <div class="map-icon right-page-link" id="home_icon" data-url="map-home"></div>
+              </div>
+              <div class="tab-pane nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
+                <div class="left-page-title" id="skills_title" style="margin-bottom: 15px"></div>
+                <div class="skill-row right-page-link" data-url="skills-chikucha">
+                  <div class="selected-border"></div>
+                  <div id="skill_disco_icon"></div><h5>Chikucha</h5>
+                </div>
+                <div class="skill-row right-page-link" data-url="skills-jellyfish">
+                  <div class="selected-border"></div>
+                  <div id="skill_jellyfish_icon"></div><h5>Jellyfish</h5>
+                </div>
+                <div class="skill-row right-page-link" data-url="skills-tailwhip">
+                  <div class="selected-border"></div>
+                  <div id="skill_tailwhip_icon"></div><h5>Tail Whip</h5>
+                </div>
+                <div class="skill-row right-page-link" data-url="skills-whileloop">
+                  <div class="selected-border"></div>
+                  <div id="skill_whileloop_icon"></div><h5>While Loop</h5>
+                </div>
+              </div>
+              <div class="tab-pane nav-activities" role="tabpanel" aria-labelledby="nav-activities-tab">
+                <div class="left-page-title" id="activities_title" style="margin-bottom: 10px"></div>
+                <div class="skill-row right-page-link" data-url="activities-lanparti">
+                  <div class="selected-border"></div>
+                  <div id="lanparti_icon"></div><h5>Lan Parti</h5>
+                </div>
+                <div class="skill-row right-page-link" data-url="activities-staykay">
+                  <div class="selected-border"></div>
+                  <div id="staykay_icon"></div><h5>KoolkidStaykay</h5>
+                </div>
+                <div class="skill-row right-page-link" data-url="activities-klimbing">
+                  <div class="selected-border"></div>
+                  <div id="klimbing_icon"></div><h5>Koolkidklimbing</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="right-page">
+            <div class="tab-content">
+              <div class="tab-pane show active nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div id="home-content">
+                  <div id="khronicles_title"></div>
+                  <!-- <h2>The</h2>
+                  <h1>KoolKidKhronicles</h1> -->
+                  <hr>
+                  <h3>FIRST ANNIVERSARY EDITION</h3>
+                  <br><br><br><br><br><br><br>
+                  <h4>WRITTEN BY DEDE & XUANXUAN</h4>
+                  <br>
+                  <h4>PUBLISHED BY MAC CHAN</h4>
+                </div>
+              </div>
+              <div class="tab-pane nav-characters" role="tabpanel" aria-labelledby="nav-characters-tab">
+
+                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Select a character from the page on the left to learn more.</div>
+              </div>
+              <div class="tab-pane nav-characters-dd" role="tabpanel" aria-labelledby="nav-characters-dd-tab">
+                <div class="header">DEDE</div>
+                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">The finest human specimen to ever grace this universe. A tough boi with a soft heart full of TLC.</div>
+                <div style="position: relative; height: 330px">
+                  <div id="char_dede"></div>
+                  <div id="dede_laptop"></div>
+                  <div id="dede_tissue"></div>
+                  <div id="dede_heart"></div>
+                </div>
+                <div style="font-size: 0.7em; margin-left: 30px">"I THINK IT'S NICE":</div>
+                <div style="font-size: 0.6em; margin-left: 30px">
+                  -PRESIDENT BUTTER<br>
+                  -STRAWBERRY/PANDAN/MELON FLAVOUR<br>
+                  -LEAF PIZZA
+                </div>
+
+                <div style="font-size: 0.7em; margin-top: 15px; margin-left: 30px">"ABOMINATION":</div>
+                <div style="font-size: 0.6em; margin-left: 30px">
+                  -YUZU DRINK<br>
+                  -TAISENG NOMVNOM<br>
+                  -2X SPICY
+                </div>
+              </div>
+              <div class="tab-pane nav-characters-xx" role="tabpanel" aria-labelledby="nav-characters-xx-tab">
+                <div class="header">XUANXUAN</div>
+                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Dede's Number One Fan. Keeps herself entertained with good books/funny birds/dede photos.</div>
+                <div style="position: relative; height: 330px">
+                  <div id="char_xuanxuan"></div>
+                  <div id="xx_kindle"></div>
+                  <div id="xx_switch"></div>
+                  <div id="xx_note"></div>
+                </div>
+                <div style="font-size: 0.7em; margin-left: 30px">LOVES:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">
+                  -DEDE<br>
+                  -Her private collection of sleeping dedes<br>
+                  -BIRDS
+                </div>
+
+                <div style="font-size: 0.7em; margin-top: 15px; margin-left: 30px">NOT SO LOVE:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">
+                  -SPOILERS<br>
+                </div>
+              </div>
+              <div class="tab-pane nav-map" role="tabpanel" aria-labelledby="nav-map-tab">
+                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Select a location from the map on the left to learn more.</div>
+              </div>
+              <div class="tab-pane nav-map-klubhouse" role="tabpanel" aria-labelledby="nav-map-klubhouse-tab">
+                <div class="header">Koolkidklubhouse</div>
+                <div id="klubhouse_pic"></div>
+                <div style="font-size: 0.7em; margin-left: 30px">Home to:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">
+                  -Dede<br>
+                  -Xuanxuan (commonly spotted)<br>
+                  -Yummy mama lim food<br>
+                  -lots of da zi ran<br>
+                  -Tom & jerry<br>
+                  -rejected kaleng
+                </div>
+              </div>
+              <div class="tab-pane nav-map-kave" role="tabpanel" aria-labelledby="nav-map-kave-tab">
+                <div class="header">Koolkidkave</div>
+                <div id="kave_pic"></div>
+                <div style="font-size: 0.7em; margin-left: 30px">Home to:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">
+                  -Xuanxuan<br>
+                  -Dede (Uncommon visitor)<br>
+                  -Mama oh cooking<br>
+                  -Birdie & Fishie & Orchid chan<br>
+                  -Nex
+                </div>
+              </div>
+              <div class="tab-pane nav-map-home" role="tabpanel" aria-labelledby="nav-map-home-tab">
+                <div class="header">Koolkidhome</div>
+                <div id="home_pic"></div>
+                <div style="font-size: 0.7em; margin-left: 30px">!! Coming soon in Patch v5.3 !!</div>
+                <br>
+
+                <div style="font-size: 0.7em; margin-left: 30px">New features:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">
+                  -Gorgeous daytime sea view<br>
+                  -Breathtaking nighttime city view<br>
+                  -Garden w/ unlimited basil<br>
+                  -▓▓▓ ▓▓▓▓▓▓ A Nice Bedroom
+                </div>
+              </div>
+              <div class="tab-pane nav-skills" role="tabpanel">
+                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Select a skill from the list on the left to learn more.</div>
+              </div>
+              <div class="tab-pane nav-skills-chikucha" role="tabpanel">
+                <div class="header">Chikucha</div>
+                <div class="d-flex">
+                  <div id="skill_disco"></div>
+                  <div class="description-box">
+                    type: dance<br>
+                    cooldown: 0s<br>
+                    cost: 1 ~ 100 energy<br>
+                    power: weekly lift breakdowns<br>
+                  </div>
+                </div>
+                <div style="font-size: 0.7em; margin-left: 30px">Upgrades</div><br>
+
+                <div style="font-size: 0.7em; margin-left: 30px">Silent Chikucha:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">skips lift maintenance for one week.</div><br>
+                <div style="font-size: 0.7em; margin-left: 30px">Vigorous Chikucha:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">guarantees this week's lift maintenance + stuns chikucha partner for entire duration.<br>
+                </div>
+              </div>
+              <div class="tab-pane nav-skills-jellyfish" role="tabpanel">
+                <div class="header">Jellyfish</div>
+                <div class="d-flex">
+                  <div id="skill_jellyfish"></div>
+                  <div class="description-box">
+                    type: dance<br>
+                    cooldown: 0s<br>
+                    cost: 1~100 energy<br>
+                    power: motivation up!<br>
+                  </div>
+                </div>
+                <div style="font-size: 0.7em; margin-left: 30px; margin-top: 5px">Upgrades</div><br>
+
+                <div style="font-size: 0.7em; margin-left: 30px">Morning Jellyfish:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">A goo-reat way to start the day.</div><br>
+                <div style="font-size: 0.7em; margin-left: 30px">Happy Jellyfish:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">Having a splatastic slime!<br>
+                </div>
+              </div>
+              <div class="tab-pane nav-skills-tailwhip" role="tabpanel">
+                <div class="header">Tail Whip</div>
+                <div class="d-flex">
+                  <div id="skill_tailwhip"></div>
+                  <div class="description-box">
+                    type: move<br>
+                    cooldown: 0s<br>
+                    cost: 10 ~ 100 energy<br>
+                    power: charms foe<br>
+                  </div>
+                </div>
+                <div style="font-size: 0.7em; margin-left: 30px; margin-top: 5px">Upgrades</div><br>
+                <div style="font-size: 0.7em; margin-left: 30px">Travelling Tail whip:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">Captivates target, leaving them stunned for the entire duration and more. Only usable by dede.<br>
+                </div>
+              </div>
+              <div class="tab-pane nav-skills-whileloop" role="tabpanel">
+                <div class="header">While Loop</div>
+                <div class="d-flex">
+                  <div id="skill_whileloop"></div>
+                  <div class="description-box">
+                    type: move<br>
+                    cooldown: 0s<br>
+                    cost: 0 energy<br>
+                    power: ???<br>
+                  </div>
+                </div>
+                <!-- <div style="font-size: 0.7em; margin-left: 30px; margin-top: 5px">Upgrades</div><br> -->
+                <br><br>
+                <div style="font-size: 0.7em; margin-left: 30px">Effects unknown. Testing is still ongoing...</div>
+                <br>
+                <div style="font-size: 0.7em; margin-left: 30px">Test inputs:</div>
+                <div style="font-size: 0.6em; margin-left: 30px">
+                  'Dat tuu' 'dat not tuu'<br><br>
+
+                  '(insert name) so bootipul'<br>
+                  '(insert other name) more bootipul'<br>
+                  '(insert first name) most bootipul'<br>
+                  '(insert other name) more bootipul than (insert first name)'<br>
+                  ...'dat not tuu' 'dat tuu'<br>
+                </div>
+              </div>
+              <div class="tab-pane nav-activities" role="tabpanel">
+                <div style="font-size: 0.6em; margin-top: 15px; margin-left: 30px">Select an activity from the list on the left to learn more.</div>
+              </div>
+
+              <div class="tab-pane nav-activities-lanparti" role="tabpanel">
+                <div class="header">Lan Parti</div>
+                <div id="lanparti_pic"></div>
+                <div style="font-size: 0.6em; margin-left: 30px">A favourite pastime that has sucked up countless weekends and occasional weekdays and will probably continue to do so for the rest of our 999-year auto renewal contract.</div>
+              </div>
+
+              <div class="tab-pane nav-activities-staykay" role="tabpanel">
+                <div class="header">Koolkidstaykay</div>
+                <div id="staykay_pic" style="margin-top: 10px"></div>
+                <div style="font-size: 0.6em; margin-left: 30px">aka bathtub appreciation and workathon adventures under zero adult supervision. ;)</div>
+              </div>
+
+              <div class="tab-pane nav-activities-klimbing" role="tabpanel">
+                <div class="header">Koolkidklimbing</div>
+                <div id="klimbing_pic" style="margin-top: 10px"></div>
+                <div style="font-size: 0.6em; margin-left: 30px"><s style="text-decoration-thickness: 1.5px;">Dede butt & muscle appreciation session</s> a fun and challenging workout, except when the wall beats you and demands you confront it again by booking another 1am session on the same day.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="nav" id="nav-tab">
+          <div class="tab active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target=".nav-home" type="button" role="tab"></div>
+          <div class="tab" id="nav-characters-tab" data-bs-toggle="tab" data-bs-target=".nav-characters" type="button" role="tab"></div>
+          <div class="tab" id="nav-map-tab" data-bs-toggle="tab" data-bs-target=".nav-map" type="button" role="tab"></div>
+          <div class="tab" id="nav-skills-tab" data-bs-toggle="tab" data-bs-target=".nav-skills" type="button" role="tab"></div>
+          <div class="tab" id="nav-activities-tab" data-bs-toggle="tab" data-bs-target=".nav-activities" type="button" role="tab"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+<script>
+  $(window).on("load", function() {
+    hideOverlay();
+  });
+
+  function hideOverlay() {
+    $('#loading_overlay').fadeOut(200);
+  }
+
+  $('div[data-bs-toggle="tab"]').on('show.bs.tab', function(e) {
+  let target = $(e.target).data('bs-target');
+  $(target)
+  .siblings('.tab-pane.active')
+  .removeClass('active show')
+  .hide();
+  $(target)
+    .fadeIn(200)
+    .addClass('active show');
+    $('.skill-row, .char-icon').removeClass('active');
+  });
+
+  $('.right-page-link').on('click', function() {
+    page = $(this).attr('data-url');
+    $('.nav-' + page)
+    .siblings('.tab-pane.active')
+    .removeClass('active show')
+    .hide();
+    $('.nav-' + page)
+      .fadeIn(200)
+      .addClass('active show');
+    if ($(this).hasClass('skill-row')) {
+      $('.skill-row').removeClass('active');
+      $(this).addClass('active');
+    }
+    else if ($(this).hasClass('char-icon')) {
+      $('.char-icon').removeClass('active');
+      $(this).addClass('active');
+    }
+  });
+
+</script>
